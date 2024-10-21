@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../const/colors.dart';
+import 'package:jogo_perguntas_respostas/quiz/const/colors.dart';
+import 'quiz_screen.dart';
 
 class QuizSplashScreen extends StatelessWidget {
   const QuizSplashScreen({super.key});
@@ -54,6 +55,14 @@ class QuizSplashScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QuizScreen(),
+                      ),
+                    );
+                  },
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 20),
                     alignment: Alignment.center,
