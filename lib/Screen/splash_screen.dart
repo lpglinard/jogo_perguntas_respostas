@@ -26,7 +26,7 @@ class QuizSplashScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset(
-                "image/balloon2.png",
+                "image/quizu.png",
               ),
               const SizedBox(height: 20),
               const Text(
