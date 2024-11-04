@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jogo_perguntas_respostas/quiz/const/colors.dart';
+import 'package:jogo_perguntas_respostas/quiz/const/dropdown_menu.dart';
 import 'quiz_screen.dart';
 
 class QuizSplashScreen extends StatelessWidget {
@@ -45,12 +46,13 @@ class QuizSplashScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                "Encare as perguntas mais difíceis e treine seu inglês!",
+                "Selecione a categoria:",
                 style: TextStyle(
                   color: lightgrey,
                   fontSize: 16,
                 ),
               ),
+              const DropdownMenuCategories(),
               const Spacer(),
               Align(
                 alignment: Alignment.center,

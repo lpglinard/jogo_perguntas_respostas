@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-var link = "https://opentdb.com/api.php?amount=20";
+var link = "https://opentdb.com/api.php?amount=20&";
 
-getQuiz() async {
-  var res = await http.get(Uri.parse(link));
+getQuiz(String category) async {
+  var res = await http.get(Uri.parse(link + 'category=' + category));
   if (res.statusCode == 200) {
     var data = jsonDecode(res.body.toString());
-    print("Dados carregados");
+    print(category);
     return data;
   }
 }
