@@ -20,12 +20,14 @@ class DropdownMenuCategories extends StatefulWidget {
 }
 
 class _DropdownMenuCategoriesState extends State<DropdownMenuCategories> {
-  String dropdownValue = "Selecione a categoria";
+  String dropdownValue = categoriesList.keys.first;
 
   @override
   Widget build(BuildContext context) {
     return DropdownMenu<String>(
-      initialSelection: "Selecione a categoria",
+      initialSelection: categoriesList.keys.first,
+      enableFilter: false,
+      width: 300,
       inputDecorationTheme: const InputDecorationTheme(
         filled: true,
         contentPadding: EdgeInsets.symmetric(vertical: 5.0),

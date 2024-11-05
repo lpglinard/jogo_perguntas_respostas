@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jogo_perguntas_respostas/quiz/const/colors.dart';
 import 'package:jogo_perguntas_respostas/quiz/const/dropdown_menu.dart';
+import 'package:jogo_perguntas_respostas/quiz/const/dropdown_difficulty.dart';
 import 'quiz_screen.dart';
 
 class QuizSplashScreen extends StatelessWidget {
@@ -34,16 +35,18 @@ class QuizSplashScreen extends StatelessWidget {
                 "Seja bem-vindo ao QuizU",
                 style: TextStyle(
                   color: lightgrey,
-                  fontSize: 18,
+                  fontSize: 25,
                 ),
               ),
+              const SizedBox(height: 20),
               const Text(
-                "QuizU",
+                "Selecione a dificuldade:",
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 75,
-                    fontWeight: FontWeight.bold),
+                  color: lightgrey,
+                  fontSize: 16,
+                ),
               ),
+              const DropdownMenuDifficulty(),
               const SizedBox(height: 20),
               const Text(
                 "Selecione a categoria:",

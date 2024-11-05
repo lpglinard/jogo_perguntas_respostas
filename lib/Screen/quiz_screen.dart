@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jogo_perguntas_respostas/quiz/const/dropdown_menu.dart';
+import 'package:jogo_perguntas_respostas/quiz/const/dropdown_difficulty.dart';
 import 'package:jogo_perguntas_respostas/quiz/Services/api_services.dart';
 import 'package:jogo_perguntas_respostas/quiz/const/colors.dart';
 
@@ -35,7 +36,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   void initState() {
     super.initState();
-    quiz = getQuiz(selectedValue);
+    quiz = getQuiz(selectedValue, difficultyValue);
     startTimer();
   }
 
