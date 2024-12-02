@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import '../const/colors.dart';
+import 'package:jogo_perguntas_respostas/quiz/const/colors.dart';
+import 'package:jogo_perguntas_respostas/quiz/const/dropdown_menu.dart';
+import 'package:jogo_perguntas_respostas/quiz/const/dropdown_difficulty.dart';
+import 'quiz_screen.dart';
 
 class QuizSplashScreen extends StatelessWidget {
   const QuizSplashScreen({super.key});
@@ -15,8 +18,8 @@ class QuizSplashScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              blue,
-              darkBlue,
+              Color.fromARGB(255, 141, 141, 143),
+              Color.fromARGB(255, 122, 123, 131),
             ],
           ),
         ),
@@ -25,35 +28,46 @@ class QuizSplashScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset(
-                "image/balloon2.png",
+                "image/quizu.png",
               ),
               const SizedBox(height: 20),
               const Text(
                 "Seja bem-vindo ao QuizU",
                 style: TextStyle(
                   color: lightgrey,
-                  fontSize: 18,
+                  fontSize: 25,
                 ),
-              ),
-              const Text(
-                "QuizU",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 75,
-                    fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
               const Text(
-                "Encare as perguntas mais difíceis e treine seu inglês!",
+                "Selecione a dificuldade:",
                 style: TextStyle(
                   color: lightgrey,
                   fontSize: 16,
                 ),
               ),
+              const DropdownMenuDifficulty(),
+              const SizedBox(height: 20),
+              const Text(
+                "Selecione a categoria:",
+                style: TextStyle(
+                  color: lightgrey,
+                  fontSize: 16,
+                ),
+              ),
+              const DropdownMenuCategories(),
               const Spacer(),
               Align(
                 alignment: Alignment.center,
                 child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QuizScreen(),
+                      ),
+                    );
+                  },
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 20),
                     alignment: Alignment.center,

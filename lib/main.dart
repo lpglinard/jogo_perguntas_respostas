@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jogo_perguntas_respostas/quiz/Screen/splash_screen.dart';
+import 'package:jogo_perguntas_respostas/Screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
