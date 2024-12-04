@@ -39,23 +39,9 @@ class QuizSplashScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
-                "Selecione a dificuldade:",
-                style: TextStyle(
-                  color: lightgrey,
-                  fontSize: 16,
-                ),
-              ),
-              const DropdownMenuDifficulty(),
+              Center(child: const DropdownMenuDifficulty()),
               const SizedBox(height: 20),
-              const Text(
-                "Selecione a categoria:",
-                style: TextStyle(
-                  color: lightgrey,
-                  fontSize: 16,
-                ),
-              ),
-              const DropdownMenuCategories(),
+              Center(child: const DropdownMenuCategories()),
               const Spacer(),
               Align(
                 alignment: Alignment.center,

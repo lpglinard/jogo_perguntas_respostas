@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../Screen/splash_screen.dart';
 
 const Map<String, String> categoriesList = {
   'Conhecimentos gerais': '9',
@@ -24,25 +25,35 @@ class _DropdownMenuCategoriesState extends State<DropdownMenuCategories> {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownMenu<String>(
-      initialSelection: categoriesList.keys.first,
-      enableFilter: false,
-      width: 300,
-      inputDecorationTheme: const InputDecorationTheme(
-        filled: true,
-        contentPadding: EdgeInsets.symmetric(vertical: 5.0),
+    var size = MediaQuery.of(context).size;
+    return Center(
+      child: SizedBox(
+        width: size.width - 100,
+        child: (DropdownMenu<String>(
+          initialSelection: categoriesList.keys.first,
+          enableSearch: false,
+          enableFilter: false,
+          width: size.width - 100,
+          inputDecorationTheme: InputDecorationTheme(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
+              fillColor: Colors.white,
+              filled: true),
+          label: const Text("Escolha a dificuldade"),
+          onSelected: (String? value) {
+            // This is called when the user selects an item.
+            setState(() {
+              dropdownValue = value!;
+              selectedValue = dropdownValue;
+            });
+          },
+          dropdownMenuEntries: categoriesList.entries
+              .map<DropdownMenuEntry<String>>((MapEntry<String, String> entry) {
+            return DropdownMenuEntry<String>(
+                value: entry.value, label: entry.key);
+          }).toList(),
+        )),
       ),
-      onSelected: (String? value) {
-        // This is called when the user selects an item.
-        setState(() {
-          dropdownValue = value!;
-          selectedValue = dropdownValue;
-        });
-      },
-      dropdownMenuEntries: categoriesList.entries
-          .map<DropdownMenuEntry<String>>((MapEntry<String, String> entry) {
-        return DropdownMenuEntry<String>(value: entry.value, label: entry.key);
-      }).toList(),
     );
   }
 }
