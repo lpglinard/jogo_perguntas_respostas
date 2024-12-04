@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../Screen/splash_screen.dart';
 
 const Map<String, String> categoriesList = {
   'Conhecimentos gerais': '9',
