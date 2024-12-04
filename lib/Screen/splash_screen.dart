@@ -39,9 +39,9 @@ class QuizSplashScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Center(child: const DropdownMenuDifficulty()),
+              const Center(child: DropdownMenuDifficulty()),
               const SizedBox(height: 20),
-              const Center(child: const DropdownMenuCategories()),
+              const Center(child: DropdownMenuCategories()),
               const Spacer(),
               Align(
                 alignment: Alignment.center,
