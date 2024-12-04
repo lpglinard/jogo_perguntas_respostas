@@ -18,8 +18,8 @@ class QuizSplashScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(255, 141, 141, 143),
-              Color.fromARGB(255, 122, 123, 131),
+              blue,
+              darkBlue,
             ],
           ),
         ),
@@ -39,23 +39,9 @@ class QuizSplashScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
-                "Selecione a dificuldade:",
-                style: TextStyle(
-                  color: lightgrey,
-                  fontSize: 16,
-                ),
-              ),
-              const DropdownMenuDifficulty(),
+              const Center(child: DropdownMenuDifficulty()),
               const SizedBox(height: 20),
-              const Text(
-                "Selecione a categoria:",
-                style: TextStyle(
-                  color: lightgrey,
-                  fontSize: 16,
-                ),
-              ),
-              const DropdownMenuCategories(),
+              const Center(child: DropdownMenuCategories()),
               const Spacer(),
               Align(
                 alignment: Alignment.center,

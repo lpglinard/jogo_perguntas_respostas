@@ -20,24 +20,34 @@ class _DropdownMenuDifficultyState extends State<DropdownMenuDifficulty> {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownMenu<String>(
-      initialSelection: difficultyList.keys.first,
-      width: 300,
-      inputDecorationTheme: const InputDecorationTheme(
-        filled: true,
-        contentPadding: EdgeInsets.symmetric(vertical: 5.0),
+    var size = MediaQuery.of(context).size;
+    return Center(
+      child: SizedBox(
+        width: size.width - 100,
+        child: DropdownMenu<String>(
+          width: size.width - 100,
+          enableSearch: false,
+          enableFilter: false,
+          inputDecorationTheme: InputDecorationTheme(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
+              fillColor: Colors.white,
+              filled: true),
+          label: const Text("Escolha a dificuldade"),
+          onSelected: (String? value) {
+            // This is called when the user selects an item.
+            setState(() {
+              dropdownValue = value!;
+              difficultyValue = dropdownValue;
+            });
+          },
+          dropdownMenuEntries: difficultyList.entries
+              .map<DropdownMenuEntry<String>>((MapEntry<String, String> entry) {
+            return DropdownMenuEntry<String>(
+                value: entry.value, label: entry.key);
+          }).toList(),
+        ),
       ),
-      onSelected: (String? value) {
-        // This is called when the user selects an item.
-        setState(() {
-          dropdownValue = value!;
-          difficultyValue = dropdownValue;
-        });
-      },
-      dropdownMenuEntries: difficultyList.entries
-          .map<DropdownMenuEntry<String>>((MapEntry<String, String> entry) {
-        return DropdownMenuEntry<String>(value: entry.value, label: entry.key);
-      }).toList(),
     );
   }
 }
