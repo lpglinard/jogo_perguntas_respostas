@@ -90,8 +90,8 @@ class _QuizScreenState extends State<QuizScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              blue,
-              darkBlue,
+              Color.fromARGB(255, 141, 141, 143),
+              Color.fromARGB(255, 122, 123, 131),
             ],
           ),
         ),

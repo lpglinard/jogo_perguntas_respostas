@@ -18,8 +18,8 @@ class QuizSplashScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              blue,
-              darkBlue,
+              Color.fromARGB(255, 141, 141, 143),
+              Color.fromARGB(255, 122, 123, 131),
             ],
           ),
         ),
