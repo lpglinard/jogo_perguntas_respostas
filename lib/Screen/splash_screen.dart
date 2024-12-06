@@ -31,11 +31,13 @@ class QuizSplashScreen extends StatelessWidget {
                 "image/quizu.png",
               ),
               const SizedBox(height: 20),
-              const Text(
-                "Seja bem-vindo ao QuizU",
-                style: TextStyle(
-                  color: lightgrey,
-                  fontSize: 25,
+              const Center(
+                child: Text(
+                  "Seja bem-vindo ao QuizU",
+                  style: TextStyle(
+                    color: white,
+                    fontSize: 25,
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
